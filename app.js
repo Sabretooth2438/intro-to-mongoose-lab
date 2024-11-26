@@ -14,8 +14,8 @@ const connect = async () => {
     await mongoose.disconnect()
     console.log('Disconnected from MongoDB')
     process.exit()
-  } catch (err) {
-    console.error('Error connecting to MongoDB:', err)
+  } catch (error) {
+    console.error('Error connecting to MongoDB:', error)
     process.exit(1)
   }
 }
