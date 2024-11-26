@@ -1,5 +1,4 @@
 /*-------------------------------- Starter Code --------------------------------*/
-
 const dotenv = require('dotenv')
 dotenv.config()
 const mongoose = require('mongoose')
@@ -60,7 +59,6 @@ const runCRM = async () => {
 }
 
 /*-------------------------------- Query Functions --------------------------------*/
-
 const createCustomer = async () => {
   const prompt = require('prompt-sync')()
   const name = prompt('Enter customer name: ')
@@ -69,8 +67,8 @@ const createCustomer = async () => {
   try {
     const customer = await Customer.create({ name, age })
     console.log('Customer created:', customer)
-  } catch (err) {
-    console.error('Error creating customer:', err)
+  } catch (error) {
+    console.error('Error creating customer:', error)
   }
 }
 
@@ -83,8 +81,8 @@ const viewCustomers = async () => {
         `id: ${customer._id} -- Name: ${customer.name}, Age: ${customer.age}`
       )
     )
-  } catch (err) {
-    console.error('Error fetching customers:', err)
+  } catch (error) {
+    console.error('Error fetching customers:', error)
   }
 }
 
@@ -105,8 +103,8 @@ const updateCustomer = async () => {
     } else {
       console.log('Customer not found.')
     }
-  } catch (err) {
-    console.error('Error updating customer:', err)
+  } catch (error) {
+    console.error('Error updating customer:', error)
   }
 }
 
@@ -121,11 +119,10 @@ const deleteCustomer = async () => {
     } else {
       console.log('Customer not found.')
     }
-  } catch (err) {
-    console.error('Error deleting customer:', err)
+  } catch (error) {
+    console.error('Error deleting customer:', error)
   }
 }
 
 /*-------------------------------- Connect to Database --------------------------------*/
-
 connect()
